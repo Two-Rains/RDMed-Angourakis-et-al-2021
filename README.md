@@ -8,8 +8,6 @@ Prepared with *reveal.js* (see https://revealjs.com/)
 Slides with optional audio (approx. 32 min.): https://andros-spica.github.io/RDMed-Angourakis-et-al-2021/  
 NOTE: the text corresponding to the audio is available in the 'speaker view' by pressing 'S'. 
 
-An audio presentation is available by pressing PLAY at the controls found at t
-
 **Authors**  
 Angourakis, Andreas
 
