@@ -1,11 +1,12 @@
 # The Indus Village model: Modelling population, agriculture and climate change in the Indus Civilisation
 Presentation for the  (RDMed) workshop (online) (26-27 January 2021)
 
-'Resilience and Adaptation to Droughts and Extreme Climate Events in the Mediterranean: Lessons Learnt from Past on a 1.5°Cor more Warmer World' (RDMed) project page: <a href="https://amidex.hypotheses.org/1832" target="blank_">https://amidex.hypotheses.org/1832/</a>
+'Resilience and Adaptation to Droughts and Extreme Climate Events in the Mediterranean: Lessons Learnt from Past on a 1.5°Cor more Warmer World' (RDMed) project page: https://amidex.hypotheses.org/1832/
 
-Prepared with *reveal.js* (see <a href="https://revealjs.com/" target="blank_">https://revealjs.com/</a>)
+Prepared with *reveal.js* (see https://revealjs.com/)
 
-Slides: <a href="https://andros-spica.github.io/RDMed-Angourakis-et-al-2021/" target="blank_">https://andros-spica.github.io/RDMed-Angourakis-et-al-2021/</a>
+Slides with optional audio (approx. 32 min.): https://andros-spica.github.io/RDMed-Angourakis-et-al-2021/  
+NOTE: the text corresponding to the audio is available in the 'speaker view' by pressing 'S'. 
 
 **Authors**  
 Angourakis, Andreas
@@ -26,7 +27,7 @@ Singh, Ravindra N.
 
 Petrie, Cameron A.
 
-For more information on authors and project: <a href="https://www.arch.cam.ac.uk/research/projects/two-rains" target="blank_">https://www.arch.cam.ac.uk/research/projects/two-rains</a>
+For more information on authors and project: https://www.arch.cam.ac.uk/research/projects/two-rains
 
 **Abstract**  
 The urban phase of the Indus Civilisation (c. 2600/2500-1900 BC) presents a compelling case of contrasting trajectories of different components of a socio-ecological system, where the decline of urban lifeways coexists with the resilience of rural contexts. Seemly robust cities, whose occupation endured centuries, appear to have been ultimately unsustainable when facing a prolonged period of aridification. Villages, however, occupied a central place in the Indus settlement system before, during, and after the urban period, suggesting that rural lifeways remained flexible and capable of adaptive transformation. Indus archaeology offers a myriad of lines of evidence on this subject, which is unfortunately seldom unified in a single model.
