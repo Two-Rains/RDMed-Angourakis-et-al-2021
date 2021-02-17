@@ -1,0 +1,1473 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>The Indus Village model</title>
+
+		<meta name="description" content="Made with Reveal.JS, A framework for easily creating beautiful presentations using HTML, by Hakim El Hattab">
+		<meta name="author" content="Andreas Angourakis">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="reveal.js/dist/theme/solarized.css" id="theme">
+		
+		<!-- Custom modifications to structure slides -->
+		<link rel="stylesheet" href="myMods.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal.js/plugin/highlight/zenburn.css" id="highlight-theme">
+		
+		<!-- Font awesome -->
+		<link rel="stylesheet" href="reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+            	<section data-state="title-page">
+					<h3>The Indus Village model</h3>
+					<h4>Modelling population, agriculture and climate change in the Indus Civilisation</h4>
+					<p>
+						<small>
+							<a href="https://www.arch.cam.ac.uk/directory/aa2112" target="_blank">Andreas <b>Angourakis</b></a>,
+							<!-- <a href="https://twitter.com/AndrosSpica" target="_blank"><i style="color:violet">@AndrosSpica</i></a>,  -->
+							<a href="https://www.sas.upenn.edu/anthropology/node/149588" target="_blank">Jennifer <b>Bates</b></a>,
+							<!-- <a href="https://twitter.com/DrJenniferBates" target="_blank"><i style="color:violet">@DrJenniferBates</i></a>,<br> -->
+							<a href="http://www.geog.cam.ac.uk/people/baudouin/" target="_blank">Jean-Phillipe <b>Baudouin</b></a>,<br>
+							<a href="http://www.esc.cam.ac.uk/directory/alena-giesche" target="_blank">Alena <b>Giesche</b></a>, 
+							<a href="https://www.arch.cam.ac.uk/directory/jrw95" target="_blank">Joanna <b>Walker</b></a>, 
+							<a href="https://www.arch.cam.ac.uk/directory/mcu22" target="_blank">M. Cemre <b>Ustunkaya</b></a>, 
+							<a href="https://cambridge.academia.edu/NathanWright" target="_blank">Nathan <b>Wright</b></a>,<br>
+							<a href="http://www.bhu.ac.in/aihc/rn.htm" target="_blank">Ravindra N. <b>Singh</b></a> and 
+							<a href="https://www.arch.cam.ac.uk/directory/cap59" target="_blank">Cameron A. <b>Petrie</b></a>
+						</small>
+					</p>
+					<div style="font-size: 50%">available at 
+						<a href="https://andros-spica.github.io/RDMed-Angourakis-et-al-2021/" target="_blank">https://andros-spica.github.io/RDMed-Angourakis-et-al-2021/</a><br>
+						<a href="https://andros-spica.github.io/RDMed-Angourakis-et-al-2021/index.html?print-pdf" target="_blank">https://andros-spica.github.io/RDMed-Angourakis-et-al-2021/index.html?print-pdf</a> (printable version)
+					</div>
+					<br>
+					<img src="images/logo-combo.png" alt="Logos"
+					style="width: 800px; border: none; box-shadow: none"/>
+
+					<aside class="notes">
+						Hello and good afternoon to you all.
+						I would like to thank Nicolas and Joël for organising this event and, of course, inviting me to present today.
+						I will present today an overall picture of the advances made in developing the Indus Village model,
+						within the context and research questions of the TwoRains ERC project. 
+					</aside>
+				</section>
+				
+				<section>
+					<section class="fragments" data-background="images/Bronze-Civs.PNG">
+						<br><br><br><br><br><br>
+						<h3 style="background-color: beige;"><b style="color:black">1.</b> 
+							<i style="color:crimson">The context: The Indus Civilisation</i></h3>
+
+						<aside class="notes">
+							Although I will be focusing here on modelling, we should start 
+							with a few notes about the context of the Indus Civilisation.
+						</aside>
+					</section>
+
+					<section>
+						<div id="left70">
+							<a title="Avantiputra7, CC BY-SA 3.0 &lt;https://creativecommons.org/licenses/by-sa/3.0&gt;, via Wikimedia Commons" 
+							href="https://commons.wikimedia.org/wiki/File:Indus_Valley_Civilization,_Mature_Phase_(2600-1900_BCE).png">
+								<img width="640" alt="Indus Valley Civilization, Mature Phase (2600-1900 BCE)" 
+								src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Indus_Valley_Civilization%2C_Mature_Phase_%282600-1900_BCE%29.png/512px-Indus_Valley_Civilization%2C_Mature_Phase_%282600-1900_BCE%29.png">
+								<i style="font-size: 33%;">Avantiputra7, CC BY-SA 3.0, via Wikimedia Commons</i>
+							</a>
+						</div>
+						<div id="right30" style="font-size: 80%; background-color: beige;">
+							<br>
+							<p>One of the great ‘Old World’ Bronze Age civilisations</p>
+							<p>First cities in South Asia ('Mature Harappan')</p>
+							<p>Five known major urban centres</p>
+							<p>... and a multitude of smaller settlements</p>
+						</div>
+
+						<aside class="notes">
+							The Indus Civilisation, also called Harappan, is one of the great civilisations of the Bronze Age in Afro-Eurasia.
+							During the Mature Harappan, between approximately two thousand six hundred and one thousand nine hundred BC, it fostered the first cities in South Asia.
+							Until now, archaeologists have identified five of such cities (including the famous Mohenjo-daro)
+							and a multitude of smaller settlements, well-distributed within the Indus River Basin.
+						</aside>
+					</section>
+
+					<section data-background="https://upload.wikimedia.org/wikipedia/commons/2/2b/Mohenjo-daro.jpg">
+						<i style="font-size:33%; background-color: white; opacity: 0.8">
+							Mohenjo-daro, Sindh, Pakistan. "Great bath" and "granary".  
+							<a href="https://commons.wikimedia.org/wiki/File:Mohenjo-daro.jpg">(Source)</a>
+						</i>
+						<div style="border: none; box-shadow: none; background-color: white; opacity: 0.8">
+							<div class="fragment" id="left30">
+								<a href="https://www.nature.com/news/ancient-civilization-cracking-the-indus-script-1.18587" target="_blank">
+									<img src="https://www.nature.com/polopoly_fs/7.30435.1445255764!/image/42-19280428.jpg_gen/derivatives/landscape_630/42-19280428.jpg" alt="seal unicorn"
+									style="width: 250px; border: none; box-shadow: none"/>
+								</a>
+								<a href="https://www.harappa.com/indus/33.html" target="_blank">
+									<img src="https://www.harappa.com/sites/default/files/styles/galleryformatter_slide/public/slides/yogic-seal_0.jpg" alt="seal sitting"
+									style="width: 250px; border: none; box-shadow: none"/>
+								</a>
+							</div>
+							<div class="fragment" id="left40">
+								<a href="https://commons.wikimedia.org/wiki/File:The_Dancing_Girl,_in_a_photogravure_by_Alfred_Nawrath,1938.jpg" target="_blank">
+									<img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/The_Dancing_Girl%2C_in_a_photogravure_by_Alfred_Nawrath%2C1938.jpg" alt="dancing girl"
+									style="width: 150px; border: none; box-shadow: none"/>
+								</a>
+								<a href="https://commons.wikimedia.org/wiki/File:Mohenjo-daro_Priesterk%C3%B6nig.jpeg" target="_blank">
+									<img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Mohenjo-daro_Priesterk%C3%B6nig.jpeg" alt="priest king"
+									style="width: 150px; border: none; box-shadow: none"/>
+								</a>
+								<a href="https://www.harappa.com/slideshows/embodying-indus-life" target="_blank">
+									<img src="https://www.harappa.com/sites/default/files/styles/large/public/images/embodying-indus-life.jpg" alt="figurines"
+									style="width: 150px; border: none; box-shadow: none"/>
+								</a>
+								<img src="images/pottery.jpg" alt="pottery"
+									style="width: 150px; border: none; box-shadow: none"/>
+								<img src="images/blades.jpg" alt="blades"
+									style="width: 150px; border: none; box-shadow: none"/>
+								<img src="images/chip-stones.jpg" alt="chip-stones"
+									style="width: 150px; border: none; box-shadow: none"/>
+							</div>
+							<div class="fragment" id="right30">
+								<a href="https://commons.wikimedia.org/wiki/File:The_%27Ten_Indus_Scripts%27_discovered_near_the_northern_gateway_of_the_Dholavira_citadel.jpg" target="_blank">
+									<img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/The_%27Ten_Indus_Scripts%27_discovered_near_the_northern_gateway_of_the_Dholavira_citadel.jpg" alt="Dholavira signboard"
+									style="width: 190px; border: none; box-shadow: none"/>
+								</a>
+								<img src="images/bungles.jpg" alt="bungles"
+									style="width: 210px; border: none; box-shadow: none"/>
+								<img src="images/beads.jpg" alt="beads"
+									style="width: 210px; border: none; box-shadow: none"/>
+								<img src="images/body-decor.jpg" alt="body-decor"
+									style="width: 210px; border: none; box-shadow: none"/>
+							</div>
+						</div>
+
+						<aside class="notes">
+							The archaeology of the Indus Civilisation has still a lot to unravel.
+							Since the first excavations, however, it was clear that this material culture is exceptionally rich
+							and has little precedents in South Asia and elsewhere. 
+							Their cities are known for anticipating in almost two millennia 
+							Greeks and Romans regarding urban planning, including the creation of sewerage systems.
+						</aside>
+					</section>
+
+					<section>
+						<div id="left50">
+							<a title="Petrie & Bates 2017, J. J World Prehist, 30:81, Fig. 3" 
+								href="https://doi.org/10.1007/s10963-017-9101-z" target="_blank">
+								<i style="font-size: 33%">Petrie & Bates 2017, J. J World Prehist</i>
+								<img width="350" alt="Petrie & Bates 2017, Fig. 3" 
+								src="https://media.springernature.com/lw785/springer-static/image/art%3A10.1007%2Fs10963-017-9101-z/MediaObjects/10963_2017_9101_Fig3_HTML.gif">
+							</a><br>
+							multi-cropping
+						</div>
+						<div id="right50">
+							<br>
+							<h3>Agriculture</h3>
+							<ul style="font-size: 66%">
+								<li>Main crops:
+									<ul>
+										<li>barley/wheat (winter)</li>
+										<li>millets/rice (summer)</li>
+									</ul>
+								</li>
+								<li>Pulses</li>
+								<li>Other</li>
+							</ul>
+							<br>
+							<a title="Bates, Petrie & Singh 2018,  Archaeol Anthropol Sci, 10:1703, Fig. 8" 
+								href="https://doi.org/10.1007/s12520-017-0489-2" target="_blank">
+								<i style="font-size: 33%">Bates, Petrie & Singh 2018,  Archaeol Anthropol Sci</i>
+								<img width="350" alt="Bates, Petrie & Singh 2018, Fig. 8" 
+								src="https://media.springernature.com/lw785/springer-static/image/art%3A10.1007%2Fs12520-017-0489-2/MediaObjects/12520_2017_489_Fig8_HTML.gif">
+							</a>
+						</div>
+
+						<aside class="notes">
+							Agriculture was the main pilar of the Indus food economy.
+							The crops cultivated were ancient varieties of wheat, barley, various millets and rice, among many others.
+							One key aspect raised in previous research is how farmers managed seasonality and climate variation,
+							particularly if and how multi-cropping was performed.
+						</aside>
+					</section>
+
+					<section>
+						<h3>Other food production</h3>
+						<div id="left50">
+							<a title="Bassem 18 at the English language Wikipedia [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0/)], via Wikimedia Commons" 
+								href="https://commons.wikimedia.org/wiki/File:Water_buffalo.jpg" target="_blank">
+								<img width="215" alt="Water buffalo" src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Water_buffalo.jpg">
+							</a>
+							<a title="Pavanaja [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" 
+							href="https://commons.wikimedia.org/wiki/File:Hariana_02.JPG" target="_blank">
+							<img width="215" alt="Hariana 02" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Hariana_02.JPG/512px-Hariana_02.JPG">
+							</a>
+							<a title="goat india by Vandita Kapoor" 
+							href="https://www.thebetterindia.com/42013/voicemail-goat-farmers-tamil-nadu-company/goat-india/" target="_blank">
+							<img width="215" alt="goat-india" src="https://www.thebetterindia.com/wp-content/uploads/2016/01/goat-india.jpg">
+							</a>
+							<a title="Emőke Dénes [CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)], via Wikimedia Commons" 
+							href="https://commons.wikimedia.org/wiki/File:Sheep_India_3.jpg" target="_blank">
+							<img width="215" alt="Sheep India 3" src="https://upload.wikimedia.org/wikipedia/commons/7/75/Sheep_India_3.jpg">
+							</a>
+						</div>
+						<div id="right50">
+							<ul>
+								<li><b>Animal husbandry:</b><br>zebu, water buffalo, sheep, goat, pigs</li>
+								<br>
+								<li>Herding and specialised animal husbandry<br>
+									<i style="font-size: 50%">
+										(
+										<a title="Chakraborty et al. 2018, J. Archaeol. Sci. Reports, 21:183–99" 
+											href="https://doi.org/10.1016/j.jasrep.2018.06.031" target="_blank">
+											Chakraborty et al. 2018
+										</a>,
+										<a title="Lightfoot et al. 2020, Archaeol. Res. Asia, 24, 100212" 
+											href="https://doi.org/10.1016/j.ara.2020.100212" target="_blank">
+											Lightfoot et al. 2020
+										</a>
+										)
+										</i>
+								</li>
+								<br>
+								<li>Fishing, hunting, gathering</li>
+							</ul>
+						</div>
+
+						<aside class="notes">
+							The Indus food economy included many other practices, 
+							among which animal husbandry and herding could have been especially important.
+						</aside>
+					</section>
+
+					<section>
+						<h3>Long-distance exchange</h3>
+						<img src="images/3mill-trade.png" alt="T. C. Wilkinson 2014, TYING THE THREADS OF EURASIA, Fig. 7.4"
+							style="width: 580px; border: none; box-shadow: none"/>
+						<img src="images/Harappa-raw-mat.jpg" alt="harappa-supply"
+							style="width: 330px; border: none; box-shadow: none"/>
+						<br>
+						<a title="T. C. Wilkinson 2014, TYING THE THREADS OF EURASIA, Fig. 7.4" 
+							href="https://www.sidestone.com/books/tying-the-threads-of-eurasia" target="_blank">
+							<i style="font-size: 33%">T. C. Wilkinson 2014, TYING THE THREADS OF EURASIA, Fig. 7.4</i>
+						</a> | <a title="R. W. Law 2011, Inter-Regional Interaction and Urbanism in the Ancient Indus Valley, Fig. 13.6" 
+						href="https://www.manoharbooks.com/BookDetails.asp?Id=110909&isbn=9788173049309" target="_blank">
+						<i style="font-size: 33%">R. W. Law 2011, Inter-Regional Interaction and Urbanism in the Ancient Indus Valley, Fig. 13.6</i>
+						</a>
+
+						<aside class="notes">
+							Given many lines of evidence, we can afirm that the Indus Civilisation peoples 
+							were very much connected to what we could name the "Early Bronze Age world system", 
+							a web of short and long distance trade connecting the Indus with Central Asia, 
+							Iran, Mesopotamia, the Levant, Egypt and the Eastern Mediterranean.
+						</aside>
+					</section>
+	
+					<section>
+						<div id="left40">
+							<a title="Petrie et al. 2017, Current Anthropology, 58(1):1-30, Fig. 1" 
+								href="https://doi.org/10.1086/690112" target="_blank">
+								<i style="font-size: 33%">Petrie et al. 2017, Current Anthropology</i>
+								<img width="512" alt="Petrie et al. 2017, Fig. 1" 
+								src="https://www.journals.uchicago.edu/na101/home/literatum/publisher/uchicago/journals/content/ca/2017/ca.2017.58.issue-1/690112/20181109/images/medium/fg1_online.gif">
+							</a>
+						</div>
+						<div id="right60">
+							<br>
+							<h3>Urbanisation and<br><i style="color: crimson">de-</i>urbanisation</h3>
+							<a title="Green & Petrie 2018, Journal of Field Archaeology, 43:4, 284-299, Fig. 9" 
+								href="https://doi.org/10.1080/00934690.2018.1464332" target="_blank">
+								<i style="font-size: 33%">Green & Petrie 2018, Journal of Field Archaeology</i>
+								<img width="512" alt="Petrie et al. 2017, Fig. 1" 
+								src="https://www.tandfonline.com/na101/home/literatum/publisher/tandf/journals/content/yjfa20/2018/yjfa20.v043.i04/00934690.2018.1464332/20180523/images/medium/yjfa_a_1464332_f0009_b.gif">
+							</a>
+						</div>
+
+						<aside class="notes">
+							Regarding settlement patterns, the Mature Harappan is marked by some nucleation (or urbanisation)
+							while, in the Late Harappan, it appears to be a dispersal towards the eastern hinterlands, 
+							though data available to date offers still an incomplete picture.
+						</aside>
+					</section>
+	
+					<section>
+						
+						<div id="left40">
+							<a title="Giesche et al. 2019, Clim. Past, 15:73-90, Fig. 1" 
+								href="https://doi.org/10.5194/cp-15-73-2019" target="_blank">
+								<i style="font-size: 33%">Giesche et al. 2019, Clim. Past</i>
+								<img width="400px" alt="Giesche et al. 2019, Fig. 1" 
+								src="https://www.clim-past.net/15/73/2019/cp-15-73-2019-f01-thumb.png">
+							</a>
+							
+						</div>
+						<div id="right60">
+							<br>
+							<h3><i style="color: crimson">summer</i> rain, <i style="color: crimson">winter</i> rain</h3>
+							<i style="font-size: 33%">J.-P. Baudouin (PhD dissertation)</i><br>
+							<img src="images/summer.png" alt="summer-rain"
+								style="width: 250px; border: none; box-shadow: none"/>
+							<img src="images/winter.png" alt="winter-rain"
+								style="width: 250px; border: none; box-shadow: none"/>
+						</div>
+
+						<aside class="notes">
+							The regional environmental variability within the Indus Basin is high.
+							Particularly, it is marked by the differential influence of seasonal rains 
+							(winter and summer), which are dependent on climatic processes that reach 
+							far around the globe--and so can vary quite unexpectantly when perceived 
+							from the human perspective.
+						</aside>
+					</section>
+	
+					<section>
+						<h3>Climate change</h3>
+						<div id="left40">
+							<a title="Giesche et al. 2019, Clim. Past, 15:73-90, Fig. 6" 
+								href="https://doi.org/10.5194/cp-15-73-2019" target="_blank">
+								<i style="font-size: 33%">Giesche et al. 2019, Clim. Past</i>
+								<img width="330" alt="Giesche et al. 2019, Fig. 6" 
+								src="https://www.clim-past.net/15/73/2019/cp-15-73-2019-f06-thumb.png">
+							</a>
+						</div>
+						<div id="right60">
+							<br>
+							<ul>
+								<li><b>Urban phase</b><br><i style="font-size: 80%;">(Mature Harappan, c. 4.5 to 4.3 ka BP)<br>&#8594; stronger winter precipitation</i></li>
+								<br>
+								<li><b>End of urban phase</b><br><i style="font-size: 80%;">(Mature to Late Harappan, >c. 4.1 ka BP)<br>&#8594; decrease in both the summer and winter precipitation</i></li>
+							</ul>
+						</div>
+
+						<aside class="notes">
+							Among the hypotheses posed to explain the trajectory of urbanisation and 
+							de-urbanisation of the Indus Civilisation, 
+							climate change has been receiving increasing support in recent years.
+							Proxy evidence to date seems to accumulate in supporting that the urban period 
+							enjoyed stronger winter precipitation, while the transition towards 
+							the Late Harappan period and the abandonment of cities coincides with 
+							the decrease of both winter and summer precipitation.
+						</aside>
+					</section>
+
+				</section>
+
+				<section>
+					<section data-background="https://gamepedia.cursecdn.com/minecraft_gamepedia/6/63/The_13w22a_Banner.png?version=c9547c31873e81c2fcff3b56461a4da5">
+						<br><br><br><br><br>
+						<h3 style="background-color: beige;"><b style="color:black">2.</b> 
+							<i style="color:crimson">Overview</i></h3>
+						<a style="font-size: 25%; background-color: beige; opacity: 50%;" href="https://minecraft.gamepedia.com/File:The_13w22a_Banner.png" target="_blank">
+							Image source: Minecraft Wiki (&copy; Mojang Studios), via Gamepedia
+						</a>
+						
+						<aside class="notes">
+							Let's talk now about how we approached this through modelling in the Two Rains project.
+						</aside>
+					</section>
+
+					<section>
+						<h3>End-goals</h3>
+						<p>
+							Explore human <b style="color: crimson">adaptation to the variability</b><br>
+							in landscapes of <i style="color:royalblue">NW India</i> during the <i style="color: royalblue">Mature Harappan</i>
+						</p>
+						<p class="fragment">
+							Expose the <b style="color: crimson">sustainability</b> of 
+							<i style="color:royalblue">food production regimes</i>,<br>
+							mainly in terms of <i style="color: crimson">cropping strategies</i>, <br>
+							in front of <i style="color:royalblue">abrupt climate change</i>
+						</p>
+						
+						<aside class="notes">
+							The Two Rains modelling programme was set to explore human adaptation to the 
+							variability in landscapes of NW India during the Mature Harappan.
+							Specifically, we focused on the surroundings of the sites in Haryana 
+							studied by Two Rains and former projects.
+							Our aim is to expose the sustainability of food production regimes, 
+							especially in terms of cropping strategies,
+							in front of abrupt climate change.
+						</aside>
+					</section>
+
+					<section>
+						Is 
+						<i style="color: rgb(128, 0, 0)">d</i><i style="color: rgb(128, 73, 0)">i</i><i style="color: rgb(128, 126, 0)">v</i><i style="color: green">e</i><i style="color: rgb(0, 128, 85)">r</i><i style="color: rgb(0, 119, 128)">s</i><i style="color: rgb(0, 13, 128)">i</i><i style="color: rgb(113, 0, 128)">t</i><i style="color: rgb(128, 0, 28)">y</i>...
+						<br><br>
+						<ul>
+							<li class="fragment"><i style="color: crimson">Adaptative</i>? (How? When?)</li><br>
+							<li class="fragment">detrimental to <i style="color: rgb(168, 152, 4)">surplus generation</i> and 
+								<i style="color: crimson">urbanisation</i>?<br>(Good for villages is bad for cities?)</li>
+						</ul>
+						
+						<aside class="notes">
+							We want to address, among other questions, how and when 
+							food production diversity is adaptative,
+							and, conversely, under which conditions, if at all, such 
+							diversity would be adverse to urbanisation. 
+						</aside>
+					</section>
+
+					<section>
+						<h3>Rationale</h3>
+						<ul>
+							<li class="fragment"><i style="color: crimson">rural</i> settlement(s)</li>
+							<li class="fragment"><i style="color: crimson">local</i> scale (max. 25 km&sup2;, 2500 units of 1 ha)</li>
+							<li class="fragment"><i style="color: crimson">daily</i> iterations</li>
+							<li class="fragment"><i style="color: crimson">food</i> production/consumption</li>
+							<li class="fragment">Implementation in <i style="color: crimson">NetLogo</i>, documentation in <i style="color: royalblue">pseudocode diagrams</i> and <i style="color: royalblue">R markdown</i></li>
+							<li class="fragment">Explore <i style="color: crimson">parameters</i> (sensitivity analysis)</li>
+							<li class="fragment">Explore <i style="color: crimson">scenarios</i><br>(procedural generation, alternative designs)</li>
+						</ul>
+						
+						<aside class="notes">
+							Before we started to build a model, we laid out a series of 
+							criteria to get us started on the right foot. 
+							| To properly answer our questions, we needed to represent rural, 
+							food-producing settlements, that nonetheless are capable of 
+							becoming larger settlements. 
+							| Even with potential growth, we are aiming at a strictly local scale, 
+							setting a maximum of twenty-five kilometres squared or two thousand five 
+							hundred units of one hectare. 
+							| The model iteration is set to a day, though some processes will only 
+							happen once or a few times a year. 
+							| Our interest is, for now, to only represent explicitly the essential 
+							elements of the Indus food system, which admittedly does not make justice 
+							to the Indus social complexity. 
+							| The model is being implemented in NetLogo in a modular and progressive manner, 
+							while each part is also thoroughly documented with pseudo-code diagrams and 
+							R markdown demonstrations. 
+							| To properly understand the model at each stage of complexity, 
+							we are performing extensive sensitivity analyses. 
+							| To inform and test our hypotheses, we will perform experiments design to 
+							represent scenarios, particularly by varying procedural generation parameters 
+							and using alternative designs.
+						</aside>
+					</section>
+
+					<section>
+						<h3>Entities</h3>
+						<table>
+							<colgroup>
+								<col span="1" style="width: 30%;"></col>
+								<col span="1" style="width: 70%;"></col>
+							 </colgroup>
+							<tbody>
+								<tr class="fragment">
+									<td style="vertical-align: bottom;">
+										<img src="images/units-infograph_p1.png" alt="units infograph household"
+											style="border: none; box-shadow: none"/>
+									</td>
+									<td>
+										<b>Household</b>: <i style="color:crimson">propinquity</i> 
+										and <i style="color:crimson">co-residence</i>, rather 
+										than <i style="color:crimson">kinship</i>
+									</td>
+								</tr>
+								<tr class="fragment">
+									<td style="vertical-align: bottom;">
+										<img src="images/units-infograph_p2.png" alt="units infograph group"
+											style="border: none; box-shadow: none"/>
+									</td>
+									<td>
+										<b>Group</b>: set of households, united by <i style="color:crimson">kinship</i> or 
+										<i style="color:crimson">alliance</i>; one or more may form a '<i style="color:crimson">settlement</i>'
+									</td>
+								</tr>
+								<tr class="fragment">
+									<td style="vertical-align: bottom;">
+										<img src="images/units-infograph_p3.png" alt="units infograph land"
+											style="border: none; box-shadow: none"/>
+									</td>
+									<td>
+										<b>Land units</b>: vary in <i style="color:crimson">elevation</i>, <i style="color:crimson">soil properties</i>, 
+										<i style="color:crimson">soil and surface water</i>, <i style="color:crimson">cover</i> and <i style="color:crimson">land use</i>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<aside class="notes">
+							There are three types of entites, or agents, in the Indus Village model.
+							| Humans, the core of this system, are represented in households,
+							which are defined in terms of propinquity and co-residence,
+							rather than kinship. Individuals themselves are accounted for and tracked,
+							but do reach the status of agents.
+							| Households will interact with each other and may form larger groups,
+							according to kinship and alliances. One or more of such groups may form
+							a settlement.
+							| Space is represented as a map of land units, each with a specific 
+							state regarding elevation, soil properties, soil and surface water,
+							cover and land use.
+						</aside>
+					</section>
+
+					<section>
+						<div class="r-stack">
+							<img src="images/Household-model-infograph-v6_p1.png" alt="Goal model p1"
+							style="border: none; box-shadow: none"/>
+							<img class="fragment" src="images/Household-model-infograph-v6_p2.png" alt="Goal model p2"
+							style="border: none; box-shadow: none"/>
+							<img class="fragment" src="images/Household-model-infograph-v6_p3.png" alt="Goal model p3"
+							style="border: none; box-shadow: none"/>
+							<img class="fragment" src="images/Household-model-infograph-v6_p4.png" alt="Goal model p4"
+							style="border: none; box-shadow: none"/>
+							<img class="fragment" src="images/Household-model-infograph-v6_p5.png" alt="Goal model p5"
+							style="border: none; box-shadow: none"/>
+							<img class="fragment" src="images/Household-model-infograph-v6_p6.png" alt="Goal model p6"
+							style="border: none; box-shadow: none"/>
+							<img class="fragment" src="images/Household-model-infograph-v6_p7.png" alt="Goal model p7"
+							style="border: none; box-shadow: none"/>
+							<img class="fragment" src="images/Household-model-infograph-v6_p8.png" alt="Goal model p8"
+							style="border: none; box-shadow: none"/>
+							<img class="fragment" src="images/Household-model-infograph-v6_p9.png" alt="Goal model p9"
+							style="border: none; box-shadow: none"/>
+							<img class="fragment" src="images/Household-model-infograph-v6_p10.png" alt="Goal model p10"
+							style="border: none; box-shadow: none"/>
+							<img class="fragment" src="images/Household-model-infograph-v6_p11.png" alt="Goal model p11"
+							style="border: none; box-shadow: none"/>
+						</div>
+						
+						
+						<aside class="notes">
+							To define what we believe are essential elements of a local-scale food system,
+							our approach was to re-imagine an integral, yet blurry picture of what village life in the Indus would look like,
+							based on known archaeological evidence, but also on minimum assumptions informed by parallels in space and time.
+							In a broad sense, these elements include:
+							| Climate; more specifically the weather conditions related to solar radiation, temperature and precipitation. 
+							| Land; which, as I mention, includes soil, water and cover.
+							| Food production; mainly crops, which translate the condition of land and climate into foodstuff.
+							| A human population; organised in households and groups and inhabiting a settlement.
+							| The demography rulling the dynamics of this population,
+							| The nutritional budget that regulates its health,
+							| The diet that feeds into it,
+							| and the food production economy that describes how production, distribution and storage of foodstuffs happens.
+							| A exchange system that connects agents to other agents, and to agents in settlements outside the local economy.
+							| And finally, bonding all together, the decision-making process that households would go through 
+							to chose and revise their food production strategies, particularly in terms of the triplet use-conditions-investment.
+						</aside>
+					</section>
+					
+					<section>
+						<div id="left50">
+							<img src="images/00-OverallDesign.png" alt="Indus Village design"
+							style="width: 450px; border: none; box-shadow: none"/>
+						</div>
+						<div id="left50">
+							<br><br>Modular</b> design<br><br>
+							<ul style="font-size: 80%;">
+								<li>Weather model</li>
+								<li>Soil Water Balance model</li>
+								<li>Land model</li>
+								<li>Crop model</li>
+								<li><i style="color:rgb(148, 144, 144); font-size: 90%;">Household Demography model</i></li>
+								<li><i style="color:rgb(148, 144, 144); font-size: 90%;">Storage model</i></li>
+								<li><i style="color:rgb(206, 199, 199); font-size: 90%;">Nutrition model</i></li>
+								<li><i style="color:rgb(148, 144, 144); font-size: 90%;">Exchange model</i></li>
+								<li><i style="color:rgb(206, 199, 199); font-size: 90%;">Household Position model</i></li>
+							</ul>
+						</div>
+						
+						<aside class="notes">
+							Deriving from this general picture, we represented all these aspects 
+							as submodels or parts of submodels, highlighted here in blue. 
+							These submodels are intentionally designed as modules,
+							meaning they can function independently as models, if the required input is given.
+							Besides the advantage in terms of code stability and extensibility,
+							our hope is that each of these submodels can be more easily re-used by others in the future.
+							The implementation of the full version of the Indus Village model is close to completion.
+							However, here I will concentrate on those parts that are further in development, 
+							thus excluding the last five models in the list. 
+						</aside>
+					</section>
+
+					<section>
+						Why have a weather and land model at all?
+						<br>
+						Why not use contemporary or proxy-based data?
+						<p class="fragment">
+							Issues:
+							<ul class="fragment">
+								<li><i style="color: crimson;">precision</i></li>
+								<li class="fragment"><i style="color: crimson;">anachronism</i></li>
+								<li class="fragment"><i style="color: crimson;">data-driven simulations</i></li>
+							</ul>
+						</p>
+						<p class="fragment" style="font-size: 80%;">However, see <a href="https://doi.org/10.1016/j.jas.2018.02.013" target="blank_">Contreras, Guiot, Suarez and Kirman (2018)</a></p>
+
+						<aside class="notes">
+							We identified the need for simulating weather and land variables, rather than using estimated data 
+							or real contemporary data. Why? 
+							| Well, we considered that there are a few deep issues 
+							that cannot be solved within the scope of our project:
+							| Although there are a incrising number of paleoclimate and paleoenvironmental proxies available,
+							the precise and absolute measure of weather and land variables in specific locations 4000 years ago
+							is probably unreachable.
+							| On the other hand, comtemporary data is, in someways, always underlying model design and parameter calibration.
+							However, the use of contemporary datasets as estimations of conditions so far in the past is 
+							obviously problematic---we are talking here about climate change.
+							| Moreover, the use of ANY dataset limited in scope as an input to a simulation model is a 
+							potential pitfall, given the perils of overfitting and circularity.
+							| There are however promising approaches available that could help ease those problems.
+						</aside>
+					</section>
+
+					<section>
+						<p style="font-size: 80%;">
+							<a href="https://doi.org/10.1088/1748-9326/abacf9" target="_blank">
+								Angourakis A, Bates J, Baudouin J-P, Giesche A, Ustunkaya M C, Wright N, Singh R N and Petrie C A. 2020.<br>
+								How to ‘downsize’ a complex society: an agent-based modelling approach to assess the resilience of Indus Civilisation settlements to past climate change.<br>
+								Environmental Research Letters, 15:115004.<br>
+								DOI: 10.1088/1748-9326/abacf9
+							</a>
+						</p>
+						
+						<aside class="notes">
+							You can check more details on our approach and the overall design of the Indus Village model 
+							in our most recent publication.
+						</aside>
+					</section>
+
+				</section>
+
+				<section>
+					<section data-background="https://preview.redd.it/9sqfyg7s3to31.png?width=960&crop=smart&auto=webp&s=68749674a2bb0d12defc0f713e83389234fb101f">
+						<br><br><br><br><br>
+						<h3 style="background-color: beige;"><b style="color:black">3.</b> 
+							<i style="color:crimson">Weather model</i></h3>
+						<a style="font-size: 25%; background-color: beige; opacity: 50%;" href="https://www.reddit.com/r/Minecraft/comments/d99qho/villager_looking_over_his_massacred_village_on_a/" target="_blank">
+							Image source: blackreaper709 (&copy; Mojang Studios), via reddit
+						</a>
+						
+						<aside class="notes">
+							The weather submodel is the first and most simple part of the Indus Village model. 
+						</aside>
+					</section>
+
+					<section>
+						<h3><i style="color: blue">Weather</i> model | Target output</h3>
+						<img src="images/Fig1-annualWeatherVariablesExamples.png" alt="weather variables examples"
+						style="width: 600px; border: none; box-shadow: none"/>
+
+						<p style="font-size: 30%;">
+							Angourakis et al. (in preparation, A),
+							data source: <a href="https://power.larc.nasa.gov/" target="_blank">NASA Power</a>
+						</p>
+
+						<aside class="notes">
+							Our aim here was to generate daily values of solar radiation, temperature 
+							(average, maximum and minimum), precipitation and reference 
+							evapotranspiration; all of which are later used by the Soil Water Balance 
+							and Crop models.
+							The requirements were challenging, but simple: the model should be 
+							general, controllable by meaningful parameters and able to reproduce 
+						    two rain seasons.
+						</aside>
+					</section>
+
+					<section>
+						<h3><i style="color: blue">Weather</i> model | Submodels</h3>
+						<img src="images/FigX-annualSinusoidCurve.png" alt="weather submodels - sinusoid"
+							style="width: 500px; border: none; box-shadow: none"/>
+						<img src="images/FigX-annualDoubleLogisticCurve.png" alt="weather submodels - double logistic"
+							style="width: 300px; border: none; box-shadow: none"/>
+						<br>
+						<table>
+							<tbody>
+								<tr>
+									<td><i style="color:crimson">annual sinusoidal curve</i><br><i style="font-size: 50%;">solar radiation, temperature</i></td>
+									<td><i style="color:royalblue">double logistic curve</i><br><i style="font-size: 50%;">precipitation (annual cumulative &#8594; absolute)</i></td>
+								</tr>
+							</tbody>
+						</table>
+
+						<p style="font-size: 30%;">
+							Angourakis et al. (in preparation, A)
+						</p>
+
+						<aside class="notes">
+							After a period of exploration, we defined two equation-based models.
+							One uses an annual sinusoidal curve to approximate the seasonal variation
+							of both solar radiation and temperature, while adding controlled noise.
+							Reproducing the much more irregular pattern of precipitation throughout the year
+							was a harder challenge. Our solution was to first approximate the annual cumulative 
+							precipitation using a double logistic curve, broken down into steps. 
+							The curve can then be converted into daily increments that can be scaled according 
+							to a predefined annual sum. 
+						</aside>
+					</section>
+
+					<section>
+						<h3><i style="color: blue">Weather</i> model | Dynamics</h3>
+						<a href="https://github.com/Andros-Spica/indus-village-model/blob/master/screenshots/01-weather%20interface.png" target="_blank">
+						<img src="https://github.com/Andros-Spica/indus-village-model/blob/master/screenshots/01-weather%20interface.png?raw=true" alt="weather interface"
+						style="width: 800px; border: none; box-shadow: none"/></a>
+						
+						<p style="font-size: 30%;">
+							Angourakis et al. (in preparation, A)
+							<br>
+							files available at the <a href="https://https://github.com/Andros-Spica/indus-village-model" target="_blank">Indus Village model repository</a>
+						</p>
+
+						<aside class="notes">
+							We believe that the current model fullfills our needs and balances number of 
+							parameters and assumptions with intelligibility and computational costs.
+							Certainly, there are caveats and margin for improvement.
+						</aside>
+					</section>
+
+					<section>
+						<h3><i style="color: blue">Weather</i> model | Validation</h3>
+						<img src="images/FigX-ValidationUsingExamples.png" alt="weather validation variables examples"
+						style="width: 600px; border: none; box-shadow: none"/>
+
+						<p style="font-size: 30%;">
+							Angourakis et al. (in preparation, A)
+						</p>
+
+						<aside class="notes">
+							The most relevant (and frustrating) issue is that
+							daily precipitation reaches maxima generally higher than those observed in
+							comparable real data. Furthermore, there is no interaction between precipitation, 
+							at one side, and solar radiation and temperature, on the other. These interactions 
+							are known to exist.
+						</aside>
+					</section>
+
+				</section>
+
+				<section>
+					<section data-background="https://www.minecraft.net/content/dam/archive/5106a4a7bf9822c3d1ea6b2fd2db2afc-farmland_header.jpg.transform/minecraft-image-large/image.jpg">
+						<br><br><br><br><br>
+						<h3 style="background-color: beige;"><b style="color:black">4.</b> 
+							<i style="color:crimson">Soil water model</i></h3>
+						<a style="font-size: 25%; background-color: beige; opacity: 50%;" href="https://www.minecraft.net/en-us/article/block-week-farmland" target="_blank">
+							Image source: Marsh Davies (&copy; Mojang Studios)
+						</a>
+						
+						<aside class="notes">
+							The Soil Water model is next in simplicity to the Weather model.
+							It describes the flow, retention and drainage of water through the soil of land units.
+						</aside>
+					</section>
+
+					<section>
+						<div id="right30">
+							<br><br>
+							<a title="Gill et al. 2013, Urban Forestry & Urban Greening, 12(3):350-358, Fig. 1" 
+							href="https://doi.org/10.1016/j.ufug.2013.03.005" target="_blank">
+							<i style="font-size: 33%">Gill et al. 2013, Urb. For. &amp; Urb Green., Fig. 1</i>
+							<br>
+							<div style="width: 280px; height: 290px; overflow: hidden;">
+								<img width="565px" height="290px" alt="Gill et al. 2013, Fig. 1" style="object-fit: cover; object-position: 0% 0;"
+								src="https://ars.els-cdn.com/content/image/1-s2.0-S1618866713000319-gr1.jpg">
+							</div>
+						</a>
+						</div>
+						<div id="left70">
+							<p>
+								Adapted from<br>the <i style="color: crimson;">ARID Soil Water model</i>
+								<br>
+								<a title="Wallach et al. 2014, pp. 24, 138" 
+							href="https://doi.org/10.1016/C2016-0-01552-8" target="_blank">
+							<i style="font-size: 80%">Wallach et al. 2014,<br>Working with Dynamic Crop Models,<br>pp. 24, 138</i></a>
+							</p>
+							
+							<ul>
+								<li>One-Layer bucket soil model</li>
+								<li>R implementation published</li>
+								<li>
+									Outcomes <i style="color: crimson;">Reference Index for Drought (ARID)</i>
+									<br>
+									<a title="Woli et al. 2012, Agronomy Journal, 104(2):287-300" 
+										href="https://www.agronomy.org/publications/aj/abstracts/104/2/287" target="_blank">
+									<i style="font-size: 50%">Woli et al. 2012, Agronomy Journal, 104(2):287-300</i></a>
+								</li>
+							</ul>
+						</div>
+						
+						<aside class="notes">
+							This model is an adapted version of the ARID Soil Water model, 
+							which, thankfully, is fully documented in the book "Working with Dynamic Crop Models".
+							It is a relatively simple model that calculates the daily water content of a single homogeneous layer of soil.
+							It requires daily precipitation (or other water inputs) and temperature, 
+							which is used to calculate daily reference evapotranspiration.
+							The targeted outcome is the Reference Index of Drought (or ARID), 
+							which is a coefficient expressing the level of water stress in 
+							the soil in a scale between 0 (none) and 1 (maximum stress).
+						</aside>
+						
+					</section>
+
+					<section>
+						<h3><i style="color: blue">Soil Water</i> model | Dynamics</h3>
+						<a href="https://github.com/Andros-Spica/indus-village-model/blob/master/screenshots/02-SoilWaterBalance-model_withSpatialDiversity%20interface.png" target="_blank">
+							<img src="https://github.com/Andros-Spica/indus-village-model/blob/master/screenshots/02-SoilWaterBalance-model_withSpatialDiversity%20interface.png?raw=true" alt="weather interface"
+								style="width: 800px; border: none; box-shadow: none"/>
+						</a>
+
+						<p style="font-size: 30%;">
+							Angourakis et al. (in preparation, B),
+							<br>
+							files available at the <a href="https://https://github.com/Andros-Spica/indus-village-model" target="_blank">Indus Village model repository</a>
+						</p>
+						
+						<aside class="notes">
+							The Soil Water model was implemented together with the Weather model 
+							so that it could remain independent of any given dataset. Nonetheless,
+							we verified that its behaviour corresponds exactly to the one presented 
+							in the original publication.
+							Here you can see how ARID (the black line at the top plot) reacts to precipitation discharge (bottom plot), 
+							depending on the seasonal variation in temperature. 
+							For instance, little rain in winter can still alleviate water stress because of the lower levels of evaporation. 
+						</aside>
+					</section>
+
+					<section class="fragments">
+						<h3>Precipitation and water stress</h3>
+						A point of comparison...
+						<div id="left50" style="text-align: center;">
+							<a title="Wallach et al. 2006, p. 120, Fig. 3.4" 
+								href="https://books.google.es/books?id=llVwDwAAQBAJ&lpg=PP1&hl=es&pg=PA120#v=onepage&q&f=false" target="_blank">
+								<i style="font-size: 33%">Wallach et al. 2006, p. 120, Fig. 3.4</i>
+								<img width="300px" alt="Giesche et al. 2019, Fig. 1" 
+								src="images/SoilWaterBalanceModel_sFrance_site1_2007.png">
+							</a><br>
+							<b style="font-size: 66%">South France (2007)</b>
+						</div>
+						<div id="right50" style="text-align: center;">
+							<img width="300px" alt="Giesche et al. 2019, Fig. 1" 
+								src="images/SoilWaterBalanceModel_Hissar_1995.png">
+							<br>
+							<b style="font-size: 66%">Hissar, Haryana, NW India (1995)</b>
+						</div>
+						<br>
+						<i style="font-size: 33%">Input data (Hissar) obtained at: <a href="https://power.larc.nasa.gov/" target="_blank">NASA POWER</a></i>
+							
+						<aside class="notes">
+							When using contemporary daily series, 
+							the Soil Water model alone already helps better understanding the constraints of seasonality in Haryana.
+							Compare the so-called "two rains", alternated with extremely dry seasons, 
+							with the evenly distributed precipitation in, for example, southern France. 
+							Despite the differences in absolute values, a premise of our project is,
+							of course, that this "two-rains" pattern also existed during the duration of the Indus Civilisation.
+						</aside>
+					</section>
+
+				</section>
+
+				<section>
+					<section data-background="https://38.media.tumblr.com/5d73b9757b83dc0a9952c1cbe5b36124/tumblr_n7yypnYVS71rrsik5o2_1280.png">
+						<br><br><br><br><br>
+						<h3 style="background-color: beige;"><b style="color:black">5.</b> 
+							<i style="color:crimson">Land model</i></h3>
+						<a style="font-size: 25%; background-color: beige; opacity: 50%;" href="https://www.minecraft.net/en-us/article/block-week-farmland" target="_blank">
+							Image source: Marsh Davies (&copy; Mojang Studios)
+						</a>
+						
+						<aside class="notes">
+							The Land model is a procedural generation engine that produces unique terrains as sets of discrete land units. 
+							Unlike the Weather and Soil Water models, its outcome is a single static terrain, 
+							which can be saved and later used as the initial state of land units by other parts of the Indus Village model.
+						</aside>
+					</section>
+
+					<section>
+						<h3><i style="color: blue">Land</i> model | Target output</h3>
+						<div id="left40">
+							<img src="images/Joanna_MSDI_1.jpg" alt="Joanna_MSDI_1.jpg"
+							style="width: 300px; border: none; box-shadow: none"/>
+							<img src="images/Joanna_MSDI_2.jpg" alt="Joanna_MSDI_2.jpg"
+							style="width: 300px; border: none; box-shadow: none"/>
+						</div>
+						<img src="images/Joanna_MSDI_0.jpg" alt="Joanna_MSDI_0.jpg"
+							style="width: 550px; border: none; box-shadow: none"/>
+						<p style="font-size: 50%;">
+							J. Walker (PhD dissertation)
+						</p>
+						
+						<aside class="notes">
+							The target output of the Land model is a multi-layer map that approximates the type of 
+							geomorphological conditions we estimated for the sites in Haryana.
+							Namely, areas that can vary from marshes and aquatic ecosystems, surrounding perennial 
+							or seasonal streams, to shrublands with dry sandy soils. 
+							We also required terrains to be specific about most aspects parametrised  
+							in other submodels, such as the soil properties influencing water dynamics.
+						</aside>
+					</section>
+
+					<section>
+						<h3><i style="color: blue">Land</i> model | Landform</h3>
+						<a href="https://github.com/Andros-Spica/indus-village-model/blob/master/03-land-model/documentation/animation/set-landform-animation.gif" target="_blank">
+							<img src="https://github.com/Andros-Spica/indus-village-model/blob/master/03-land-model/documentation/animation/set-landform-animation.gif?raw=true" alt="landform features animation"
+							style="width: 180px; border: none; box-shadow: none"/>
+						</a>
+
+						<a href="https://github.com/Andros-Spica/indus-village-model/blob/master/03-land-model/documentation/land_01_onlyElevation_view_wNoiseAndSmooth.png" target="_blank">
+							<img src="https://github.com/Andros-Spica/indus-village-model/blob/master/03-land-model/documentation/land_01_onlyElevation_view_wNoiseAndSmooth.png?raw=true" alt="terrain noise and smoothing"
+							style="width: 180px; border: none; box-shadow: none"/>
+						</a>
+
+						<a href="https://github.com/Andros-Spica/indus-village-model/blob/master/03-land-model/documentation/land_01_onlyElevation_view_wXYSlope.png" target="_blank">
+							<img src="https://github.com/Andros-Spica/indus-village-model/blob/master/03-land-model/documentation/land_01_onlyElevation_view_wXYSlope.png?raw=true" alt="terrain XY slopes"
+							style="width: 180px; border: none; box-shadow: none"/>
+						</a>
+
+						<a href="https://github.com/Andros-Spica/indus-village-model/blob/master/03-land-model/documentation/land_01_onlyElevation_view_wValleySlope.png" target="_blank">
+							<img src="https://github.com/Andros-Spica/indus-village-model/blob/master/03-land-model/documentation/land_01_onlyElevation_view_wValleySlope.png?raw=true" alt="terrain valley slope"
+							style="width: 180px; border: none; box-shadow: none"/>
+						</a>
+						<br>
+						<p style="font-size: 80%;">features &#8594; noise + smoothing &#8594; XY slopes &#8594; valley slope</p>
+						
+						
+						<aside class="notes">
+							The first step in the Land model is to set the elevation of land units. 
+							The model starts by sculpting discrete landform features using agents performing random walks that raise or depress elevation in their path.
+							Elevation is then smoothed and perturbated with noise.
+							Next, two algorithms are applied to generate map-wide slopes: 
+							one that inclinates the horizontal plane in x (West-East) and y (North-South);
+							and another that forces the terrain into either a valley or a ridge with a general North-South orientation.
+							Although stochastic, the final outcome corresponds to a specific set of parameter values and a random number generator seed.
+						</aside>
+					</section>
+
+					<section>
+						<h3><i style="color: blue">Land</i> model | Flows</h3>
+						<a href="https://github.com/Andros-Spica/indus-village-model/blob/master/03-land-model/documentation/flowAccumulationOrder_plot5.png" target="_blank">
+							<img src="https://github.com/Andros-Spica/indus-village-model/blob/master/03-land-model/documentation/flowAccumulationOrder_plot5.png?raw=true" alt="terrain generator interface"
+							style="width: 300px; border: none; box-shadow: none"/>
+						</a>
+						<a href="https://github.com/Andros-Spica/indus-village-model/blob/master/03-land-model/terrains/terrain_random_w%3D50_h%3D50_a%3DC%23_fill-sinks%3Dtrue_seed%3D35.png" target="_blank">
+							<img src="https://github.com/Andros-Spica/indus-village-model/blob/master/03-land-model/terrains/terrain_random_w=50_h=50_a=C%23_fill-sinks=true_seed=35.png?raw=true" alt="terrain generator interface"
+							style="width: 300px; border: none; box-shadow: none"/>
+						</a>
+						<br>
+						flow <i style="color:crimson">direction</i> and <i style="color:royalblue">accumulation</i> (+river accumulation)
+						<br>
+						<p style="font-size: 50%">
+							Algorithms adapted from
+							<a title="Huang, P. and Lee, K.T. 2015, J Earth Syst Sci, 124:1653–1665" 
+							href="https://doi.org/10.1007/s12040-015-0641-2" target="_blank">
+								Huang &amp; Lee 2015
+							</a>, 
+							<a title="Jenson, S. K., & Domingue, J. O. 1988, J Earth Syst Sci, 124:1653–1665" 
+							href="https://doi.org/10.1007/s12040-015-0641-2" target="_blank">
+								Jenson &amp; Domingue 1988
+							</a>
+						</p>
+						
+						<aside class="notes">
+							Once elevation has been established, the Land model calculates the direction of flow for each land unit.
+							This direction always points to the lowest of up to eight neighbous in the grid or towards the edges of the map.
+							Land units that are the lowest among their neighbours, also called sinks, are filled up following the Huang & Lee algorithm,
+							until there are only sinks present at the edges of the map.
+							With flow direction, the model can then calculate a measure of flow accumulation also for each land unit, 
+							expressing how many land units flow directly or indirectly to it. On the left, you have a demonstration of this done in R.
+							Modifying this calculation, an arbitrarily large flow accumulation (controlled as a parameter) is added to a land unit at the highest edge side
+							and its flow direction is pointed towards the inside of the grid. With this added feature, 
+							we aimed at representing a passing stream or river without explicitly modelling its entire basin. 
+						</aside>
+					</section>
+
+					<section>
+						<h3><i style="color: blue">Land</i> model | Soil depth and texture</h3>
+						<table>
+							<tbody>
+								<tr>
+									<td>
+										<a href="https://github.com/Andros-Spica/indus-village-model/tree/master/03-land-model" target="_blank">
+											<img src="images/land_05_withInitialEcologicalCommunity view_1.png" alt="terrain soil texture"
+												style="width: 300px; border: none; box-shadow: none"/>
+										</a>
+									</td>
+									<td>
+										<a href="https://github.com/Andros-Spica/indus-village-model/tree/master/03-land-model" target="_blank">
+											<img src="images/land_05_withInitialEcologicalCommunity view_2.png" alt="terrain soil texture"
+											style="width: 300px; border: none; box-shadow: none"/>
+										</a>
+									</td>
+									<td>
+										<a href="https://github.com/Andros-Spica/indus-village-model/tree/master/03-land-model" target="_blank">
+											<img src="images/land_05_withInitialEcologicalCommunity view_2b.png" alt="terrain soil texture types"
+											style="width: 300px; border: none; box-shadow: none"/>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>depth</td>
+									<td>texture<br><i style="font-size: 80%;">(% sand, silt, clay)</i></td>
+									<td>texture type<br><i style="font-size: 80%;">(USDA)</i></td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<!--
+						<a href="https://github.com/Andros-Spica/indus-village-model/blob/master/03-land-model/documentation/USDA-texturalSoilClassification.png" target="_blank">
+							<img src="https://github.com/Andros-Spica/indus-village-model/blob/master/03-land-model/documentation/USDA-texturalSoilClassification.png?raw=true" alt="terrain soil depth"
+							style="width: 300px; border: none; box-shadow: none"/>
+						</a>-->
+						
+						<aside class="notes">
+							The model then derives from flow accumulation the soil depth 
+							and the relative proportion of sand, silt and clay particle fractions, 
+							under the assumption that flow accumulation is indicative of past erosion. 
+							Overall, soil depth and the percentages 
+							of silt and clay increase downhill while sand fraction increases uphill.
+							Texture is classified using the the US Department of Agriculture scheme, 
+							which can be related to tabulated data on soil water parameters.
+						</aside>
+					</section>
+
+					<section>
+						<h3><i style="color: blue">Land</i> model | Ecological communities</h3>
+						<table>
+							<tbody>
+								<tr>
+									<td>
+										<a href="https://github.com/Andros-Spica/indus-village-model/tree/master/03-land-model" target="_blank">
+											<img src="images/land_05_withInitialEcologicalCommunity view_3.png" alt="terrain ecol. composition"
+												style="width: 300px; border: none; box-shadow: none"/>
+										</a>
+									</td>
+									<td>
+										<a href="https://github.com/Andros-Spica/indus-village-model/tree/master/03-land-model" target="_blank">
+											<img src="images/land_05_withInitialEcologicalCommunity view_4.png" alt="terrain cover type"
+											style="width: 300px; border: none; box-shadow: none"/>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>composition<br><i style="font-size: 80%;">(% grass, brush, wood)</i></td>
+									<td>cover type</td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<aside class="notes">
+							A similar logic is applied to generate the composition of ecological communities 
+							within each land unit, which is expressed as relative proportions of grass, brush and wood type vegetation.
+							In this case, however, we assume a order of ecological succession where wood components take precedence over brush, and brush over grass.
+							This configuration is to serve as the initial state of ecological communities 
+							and the climax of any further ecological succession, in case it changes due to perturbations.
+							The immediate role of ecological communities is to inform a classification of cover types,
+							which can be related how permeable to water is the land unit surface. 
+							Additionally, ecological communities form the base for estimating the subsistence value 
+							of those land units not used for cultivating crops.
+						</aside>
+					</section>
+
+					<section>
+						<h3><i style="color: blue">Land</i> model | Interface</h3>
+						<a href="https://github.com/Andros-Spica/indus-village-model/blob/master/screenshots/03-land_05_withInitialEcologicalCommunity%20interface.png" target="_blank">
+							<img src="https://github.com/Andros-Spica/indus-village-model/blob/master/screenshots/03-land_05_withInitialEcologicalCommunity%20interface.png?raw=true" alt="Land model interface"
+								style="width: 600px; border: none; box-shadow: none"/>
+						</a>
+
+						<p style="font-size: 30%;">
+							Angourakis et al. (in preparation, B),
+							<br>
+							files available at the <a href="https://https://github.com/Andros-Spica/indus-village-model" target="_blank">Indus Village model repository</a>
+						</p>
+						
+						<aside class="notes">
+							The NetLogo implementation of the Land model is a fully-independent model
+							that can generate terrains with a wide variety of characteristics, 
+							which can be explored in a controlled way through a set of meaninful parameters.
+							Even though terrain generation can take less than a second,
+							we added an import/export functionality that can be used to generate entire terrain libraries,
+							regardless of when these will be used in simulations.
+							We also made efforts in facilitating the visualisation of all generated aspects, particularly with multiple modes of patch colouring.
+							At the bottom of the interface, we are able to monitor how a certain parameter configuration affects
+							the calculation of soil depth (left), soil texture (middle) and ecological communities (right), 
+							depending on flow accumulation.
+						</aside>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h3>I1. Integrated Land Unit model</h3>
+						
+						<a href="https://github.com/Andros-Spica/indus-village-model/blob/master/diagrams/I1-LandUnitModel_00-in-OverallDesign.png" target="_blank">
+							<img src="https://github.com/Andros-Spica/indus-village-model/blob/master/diagrams/I1-LandUnitModel_00-in-OverallDesign.png?raw=true" alt="terrain soil texture types"
+							style="width: 600px; border: none; box-shadow: none"/>
+						</a>
+
+						<aside class="notes">
+							To be consistent with the modular approach, we established our first modelling milestone as the Integrated
+							Land Unit model, which combines the Weather, Soil Water and Land models into a working independent model.
+							The challenge was the integration of the Land model with the Soil Water model, 
+							which in turn already integrated the Weather model.
+							The Land model generates static terrain data while the Soil Water model describes a dynamic process
+							within each land unit separately. Most inputs generated by the Land model are useble directly.
+							However, there are several aspects that are not specified enough in either of these models, 
+							and thus required further design. Namely, the estimation of soil water capacities according to soil texture, 
+							how runoff exchange and inundation exchange are solved, 
+							and the impact of water on the ecological communities and cover types of a land unit.
+						</aside>
+					</section>
+
+					<section>
+						<iframe data-autoplay width="770" height="450" data-src="https://www.youtube.com/embed/Fsrtjber0C8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	
+						<p style="font-size: 30%;">
+							Angourakis et al. (in preparation, B)
+							<br>
+							files available at the <a href="https://https://github.com/Andros-Spica/indus-village-model" target="_blank">Indus Village model repository</a>
+						</p>
+							
+						<aside class="notes">
+							The most important outcome of the Integrated Land Unit model is, of course, the ARID coefficient.
+							Here you can see a simulation run illustrating how ARID reacts differently to precipitation and 
+							the influx of a passing river, depending on the different conditions of each land unit.
+							Darker colour indicates lower water stress.
+							With ancient agriculture in mind, this partial model already raises our attention towards 
+							the importance of a river inflow and a terrain allowing the formation of inundation areas.
+							Note that, in this simulation, river inflow is kept constant, making it a more reliable water source than precipitation.
+							Alternatively, this model can be easily extended to also represent seasonal streams.
+							Feel free to pause this recording now to watch the entire video.
+							...
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section data-background="https://daniel-davies.github.io/13-RoboFarm/farming.png">
+						<br><br><br><br><br>
+						<h3 style="background-color: beige;"><b style="color:black">6.</b> 
+							<i style="color:crimson">Crop model</i></h3>
+						<a style="font-size: 25%; background-color: beige; opacity: 50%;" href="https://daniel-davies.github.io/13-RoboFarm/" target="_blank">
+							Image source: Daniel Davies and Brett Galkowski (&copy; Mojang Studios)
+						</a>
+						
+						<aside class="notes">
+							All submodels related to land units in the Indus Village model are designed to represent the conditions 
+							and processes involved in human subsistence.
+							As mentioned in the introduction, crop cultivation is considered to be the main subsistence activity, 
+							among the many alternatives available to the Indus Civilisation peoples.
+							Consequently, most output variables of the Integrated Land Unit model feed directly into the Crop model.
+							In turn, the function of the Crop model is to calculate the yields of one or more types of crop growing in each land unit.  
+						</aside>
+					</section>
+
+					<section>
+						<h4><i style="color: blue">Crop</i> model</h4>
+						<a href="https://github.com/Andros-Spica/indus-village-model/blob/master/screenshots/04-SIMPLE-crop-model_withSpatialDiversity%20interface.png" target="_blank">
+							<img src="images/04-SIMPLE-crop-model_withSpatialDiversity interface.png" alt="SIMPLE crop model interface"
+								style="width: 600px; border: none; box-shadow: none"/>
+						</a>
+
+						<p style="font-size: 30%;">
+							Angourakis et al. (in preparation, C),
+							<i>based on the SIMPLE crop model (<a href="https://doi.org/10.1016/j.eja.2019.01.009" target="_blank">Zhao et al. 2019</a>)</i>
+							<br>
+							files available at the <a href="https://https://github.com/Andros-Spica/indus-village-model" target="_blank">Indus Village model repository</a>
+						</p>
+						
+						<aside class="notes">
+							With this purpose in mind, we have chosen to use the SIMPLE crop model,
+							which simplifies crop dynamics enough so we can operate with multiple crops, 
+							without the necessity of dealing with multiple models and a high number of parameters.
+							After implementing this model in NetLogo, we adapted it to a spatial scheme where multicropping is possible.
+							In the example shown here, however, only one crop is assigned per land unit.
+							The SIMPLE crop model calculates the daily biomass based on growth stages 
+							defined in thermal time and the modulation of the radiation use efficiency by temperature, 
+							carbon dioxide concentrations and water stress.
+							Crop parameters are set in a csv file and imported during initialisation.
+						</aside>
+					</section>
+
+					<section>
+						<h4>Expected relationship between <i style="color: crimson;">ARID</i> and <i style="color:royalblue;">crop yield</i></h4>
+						<a href="https://github.com/Andros-Spica/indus-village-model/blob/master/04-crop-model/output/expectedARIDxYieldRelationship.png" target="_blank">
+							<img src="https://github.com/Andros-Spica/indus-village-model/blob/master/04-crop-model/output/expectedARIDxYieldRelationship.png?raw=true" alt="terrain soil texture types"
+							style="width: 600px; border: none; box-shadow: none"/>
+						</a>
+
+						<p style="font-size: 30%;">
+							Angourakis et al. (in preparation, C)
+							<br>
+							files available at the <a href="https://https://github.com/Andros-Spica/indus-village-model" target="_blank">Indus Village model repository</a>
+						</p>
+							
+						<aside class="notes">
+							One of the key roles of the Crop model is to mediate 
+							between the trajectory of ARID during the grow season of a crop and the yield produced.
+							By design, there is either no relationship between ARID and yield, 
+							if the crop's water sensitivity is zero,
+							or a negative correlation, if otherwise.
+							We are still to explore this relationship systematically for different crops.
+							However, given the model simplicity, we do expect to find that 
+							crops with higher water sensitivity will only reach 
+							the majority of their potential yield if ARID is kept close to minimum.
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>I2. Integrated Land Crop model</h3>
+						
+						<div class="r-stack">
+							<a href="https://github.com/Andros-Spica/indus-village-model/blob/master/diagrams/I2-LandCropModel_00-in-OverallDesign.png" target="_blank">
+								<img src="https://github.com/Andros-Spica/indus-village-model/blob/master/diagrams/I2-LandCropModel_00-in-OverallDesign.png?raw=true" alt="terrain soil texture types"
+								style="width: 600px; border: none; box-shadow: none"/>
+							</a>
+							<img class="fragment" src="images/UnderConstruction.png" alt="Under Construction" style="width: 600px; border: none; box-shadow: none"/>
+						</div>
+
+						<p style="font-size: 30%;">
+							Angourakis et al. (in preparation, C)
+						</p>
+						
+						<aside class="notes">
+							The second modelling milestone is the Integrated Land Crop model,
+							which combines the Integrated Land Unit model with the Crop model.
+							Unlike the first milestone, the integration of components is not challenging.
+							The outputs of all former submodels feed directly into the required inputs of the Crop model,
+							and few adjustments are required--for example, on accounting crops as ecological components.
+							There is, however, the need to specify the mechanisms for managing crops 
+							and other elements of land units, which would allow this model to work independently 
+							of the human-related submodels.
+							| This integration is ongoing but will be delivered and explained soon 
+							in the form of a publication together with the Crop model.
+						</aside>
+					</section>
+
+					<section>
+						<h4>Expected relationship between <i style="color: crimson;">ARID</i> and <i style="color:royalblue;">crop yield</i> (II)</h4>
+						<img src="images/Screenshot I1.png" alt="screenshot I1 detail"
+							style="width: 400px; border: none; box-shadow: none"/>
+						<p style="font-size: 30%;">
+							Angourakis et al. (in preparation, C)
+							<br>
+							files available at the <a href="https://https://github.com/Andros-Spica/indus-village-model" target="_blank">Indus Village model repository</a>
+						</p>
+							
+						<aside class="notes">
+							The Integrated Land Crop model will combine the negative relationships 
+							between ARID and flow accumulation (including the effect of passing rivers),
+							and between ARID and crop yield.
+							Our main expectation for this model is that this combination 
+							will generate a management dilemma, given the mandate of acquiring 
+							a certain amount of yield from a specific 
+							set of crops with diverse water sensitivities. 
+							Additionally, when a river is present and 
+							precipitation is seasonal and highly variant between years, 
+							like in the Indus Basin, 
+							we expect a clearcut separation between rainfed and river flooding areas 
+							in terms of the productivity of cropping strategies. 
+						</aside>
+					</section>
+
+				</section>
+
+				<section class="fragments">
+					<h3>Conclusions</h3>
+					<ul>
+						<li class="fragment">Modelling for <i style="color: crimson">the long haul</i></li>
+						<li class="fragment">K.I.S.S. at your discretion<br>&#8594;Balance <i style="color: green">simplification</i> and <i style="color: crimson">complexity</i></li>
+						<li class="fragment">There are many models "out there" (<i style="color: crimson">replicability</i>)</li>
+						<li class="fragment">Importance of the cycle <i style="color: crimson">design</i>-<i style="color: green">document</i>-<i style="color: royalblue">refactor</i></li>
+						<li class="fragment"><i style="color: crimson">Share</i> and <i style="color: royalblue">document</i> (as if there was no tomorrow!)</li>
+					</ul>
+						
+					<aside class="notes">
+						I would like to conclude this talk with a few takeaways from our experience 
+						developing the Indus Village model so far.
+						| First, I insist on the importance of modelling for the long haul. 
+						Nowadays, most simulation modelling, and particularly agent-based modelling, 
+						is being done for short-term objectives, 
+						normally meaning they should begin and end within a few years time.
+						Any academic endevour is inescapably framed by funding and deadlines fixed by institutions. 
+						Still, we should always keep in mind that there are certain questions 
+						(probably most of them) that are worth a lifetime of research.
+						Modelling socio-environmental systems of the past is no exception.
+						Therefore, I would argue for a certain attitude of individual resistance in this field, 
+						where we fullfill institutional and career requirements, 
+						but place the priority on contributing for long-term, 
+						collective and probably multigenerational challenges.  
+						| Secondly, I would like to advocate for following 
+						the KISS or "Keep It Simple, Stupid!" principle at your own discretion. 
+						Indeed, this principle is useful from a designer or engineer point of view;
+						a simpler system IS generally less likely to break.
+						However, in this field, we are not only creating artifical systems, 
+						but actually also trying to reproduce aspects of natural systems.
+						These are complex, organically-evolved systems which are often 
+						unnecessarily complicated, filled with reduncies and hardly optimised for predefined purposes. 
+						As modellers, we should not try to include all possible elements of such systems in a single model.
+						Even so, we should not ignore the complexity that we know to exist and 
+						should maintain a balance between simplicity of design and complexity of content.
+						| As you may have noticed throughout this presentation, 
+						the Indus Village model relies greatly on models created and published by others.
+						That has been an intentional strategy from the start. 
+						I believe that, given the limitations in time and funding for any given model, 
+						the combination of models offers a push for developing larger and better models,
+						able to represent with higher fidelity the complexity of natural systems
+						without becoming unintelligible. 
+						There are many models already out there, published in various formats.
+						To find them, we just need to look!
+						However, for model re-use to be possible, modellers in all fields must try 
+						to garantee the replicability of their work, which is no trivial task.
+						| This brings me to the next point, which is the importance of following 
+						the cycle design-document-refactor. 
+						Remember, designing simulation models is also, and maybe above all, 
+						a craft involving a good share of programming. 
+						As so, it requires a great deal of trial and error, testing 
+						and not being afraid of taking steps back. 
+						Moreover, because our focus is not as much on performance as on intelligibility,
+						we must force ourselves to constantly work on code documentation. 
+						These should range from extensive comments on code 
+						to high-level explanations in textual and graphical form. 
+						| Last, I call anyone involved in modelling to share and document their work,
+						as if there was no tomorrow! 
+						Only through this kind of practice can we collectivelly achieve 
+						a truly model-based science capable of dealing with complex systems.
+					</aside>
+				</section>
+
+				<section>
+					<h3>'TwoRains' project</h3>
+					<h4>ERC, 2015-2020</h4>
+					
+					<br>
+					<ul>
+						<li><a href="https://www.arch.cam.ac.uk/research/projects/two-rains" target="_blank">Institutional Web page</a></li>
+						<li><a href="https://tworains.wordpress.com" target="_blank">Project blog</a></li>
+						<li><a href="https://https://github.com/Andros-Spica/indus-village-model" target="_blank">Indus Village model repository</a></li>
+					</ul>
+						
+					<aside class="notes">
+						If you would like to know more about this work and our project in general,
+						please visit our project page, our blog and the GitHub repository where 
+						all materials related to the Indus Village model can be found. 
+					</aside>
+				</section>
+
+				<section>
+					<h3>Acknowledgements</h3>
+					<p style="font-size: 66%">
+						Thanks to the <b style="color: blue">Land, Water and Settlement</b> and <b style="color: crimson">TwoRains</b> teams:<br><br>
+						Aftab Alam, Alessandro Ceccarelli, Sagorika Chakraborty, 
+						Sudarshan Chakradhari, Arti Chowdhary, Yama Dixit, Charly French, Adam Green, 
+						Henry Green, Lily Green, David Hodell, Penny Jones, Carla Lancelotti, Emma Lightfoot, Frank Lynam, 
+						Sayantani Neogi, Hector Orengo, Arun Kumar Pandey, Danika Parikh, Vikas Pawar, Amit Ranjan,
+						David Redhouse, Dheerendra Pratab Singh, & Akshyeta Suryanarayan.
+						<br><br>
+						Special thanks also to the Department of AIHC and Archaeology, BHU, the European Research Council (ERC), 
+						and the UK-India Education and Research Initiative (UKIERI) for support and funding, and to the Archaeological 
+						Survey of India for permission to carry out the work.
+					</p>
+						
+					<aside class="notes">
+						I would like to thank our project members and collaborators, without them this work would not be possible.  
+					</aside>
+
+				</section>
+
+				<section data-background="https://thumbs.gfycat.com/PepperyCalculatingGemsbok-size_restricted.gif">
+					<br><br><br><br><br>
+					<p style="background-color: beige;"><i style="color: crimson;">THANK YOU</i> FOR YOUR ATTENTION!</p>
+					<div style="font-size: 50%; background-color: beige;">available at 
+						<a href="https://andros-spica.github.io/RDMed-Angourakis-et-al-2021/" target="_blank">https://andros-spica.github.io/RDMed-Angourakis-et-al-2021/</a><br>
+						<a href="https://andros-spica.github.io/RDMed-Angourakis-et-al-2021/index.html?print-pdf" target="_blank">https://andros-spica.github.io/RDMed-Angourakis-et-al-2021/index.html?print-pdf</a> (printable version)
+					</div>
+					<a style="font-size: 25%; background-color: beige; opacity: 50%;" href="https://www.minecraft.net/en-us/article/block-week-chest" target="_blank">
+						Image source: gfycat (&copy; Mojang Studios)
+					</a>
+						
+					<aside class="notes">
+						Thank you for your attention 
+						and I hope you enjoyed this presentation!
+					</aside>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="reveal.js/dist/reveal.js"></script>
+        <script src="reveal.js/plugin/zoom/zoom.js"></script>
+		<script src="reveal.js/plugin/notes/notes.js"></script>
+		<script src="reveal.js/plugin/search/search.js"></script>
+		<script src="reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="reveal.js/plugin/highlight/highlight.js"></script>
+
+		<script src="reveal.js-menu/menu.js"></script>
+		<script src="reveal.js-plugins/audio-slideshow/plugin.js"></script>
+		<script src="reveal.js-plugins/audio-slideshow/RecordRTC.js"></script>
+		<script src="reveal.js-plugins/audio-slideshow/recorder.js"></script>
+
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				mouseWheel: true,
+				slideNumber: 'c/t',
+				audio: {
+					prefix: 'audio/',
+					suffix: '.webm',
+					defaultDuration: 5,
+					textToSpeechURL: "http://api.voicerss.org/?key=f02cebf4e99c493d8a0048fde8a96278&hl=en-gb&c=ogg&src=",
+					advance: 500,
+					autoplay: false,
+					defaultNotes: false,
+					defaultText: false,
+					playerOpacity: 0.2,
+				},
+				menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
+					themes: false,
+					transitions: false,
+					markers: true,
+					hideMissingTitles: true
+				},
+
+				keyboard: { 
+					82: function() { Recorder.toggleRecording(); },	// press 'r' to start/stop recording
+					90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
+					84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+  				},
+
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMenu, RevealAudioSlideshow, RevealAudioRecorder]
+			});
+
+		</script>
+	</body>
+	<div id="background-header">
+		<div style="text-align:center; position:absolute; top:3%; left: 10%; font-size:100%; color:darkcyan">
+			<i>Angourakis et al.<br>RDMed workshop</i>
+		</div>
+		<div style="text-align:left; position:absolute; top:3%; right: 10%; font-size:100%; color:gray">
+			<b>Virtual meeting, 26-27 January 2021</b>
+		</div>
+		<div style="text-align:right; position:absolute; top:6%; right: 10%; font-size:100%; color:gray">
+			<b><a href="https://andros-spica.github.io/RDMed-Angourakis-et-al-2021/">https://andros-spica.github.io/RDMed-Angourakis-et-al-2021/</a></b>
+		</div>
+	</div>
+</html>
