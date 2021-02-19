@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4552781.svg)](https://doi.org/10.5281/zenodo.4552781)
+
 # The Indus Village model: Modelling population, agriculture and climate change in the Indus Civilisation
 Presentation for the  (RDMed) workshop (online) (26-27 January 2021)
 
