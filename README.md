@@ -1,5 +1,8 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4552781.svg)](https://doi.org/10.5281/zenodo.4552781)
+
 # The Indus Village model: Modelling population, agriculture and climate change in the Indus Civilisation
-Presentation for the  (RDMed) workshop (online) (26-27 January 2021)
+Presentation for the *Modelling adaptation of ancient agricultural societies to
+climate change, the core of an interdisciplinary approach* workshop (online), oganised by the RDMed project (26-27 January 2021)
 
 'Resilience and Adaptation to Droughts and Extreme Climate Events in the Mediterranean: Lessons Learnt from Past on a 1.5°Cor more Warmer World' (RDMed) project page: https://amidex.hypotheses.org/1832/
 
